@@ -23,44 +23,40 @@ const CardStack = () => {
     const [showUserDetails, setShowUserDetails] = useState(false);
 
     const handleClick = (index) => {
-        // document.getElementById(`rectangle`).style.transform = 'translateX(200px)';
-
-        
-
 
 
         if(index === 3){
             return;
         }
 
-        if(showTransactions && index === 2){
-            setShowUserDetails(true);
-            document.getElementById(`transactions`).style.transform = 'translateY(-900px)';
-            document.getElementById(`transactions-list`).style.display = 'none';
-            document.getElementById(`card-2`).style.transform = 'translateY(250px)';
-            document.getElementById(`user-details`).style.transform = 'translateY(420px)';
-        }
+        // if(showTransactions && index === 2){
+        //     setShowUserDetails(true);
+        //     document.getElementById(`transactions`).style.transform = 'translateY(-900px)';
+        //     document.getElementById(`transactions-list`).style.display = 'none';
+        //     document.getElementById(`card-2`).style.transform = 'translateY(250px)';
+        //     document.getElementById(`user-details`).style.transform = 'translateY(420px)';
+        // }
 
-        if(!showTransactions && index === 2){
-            setShowTransactions(true);
-            document.getElementById(`transactions`).style.transform = 'translateY(-1200px)';
-            document.getElementById(`transactions`).style.zIndex = 10;
-            document.getElementById(`button`).style.transform = 'translateY(-200px)';
-            document.getElementById(`button`).style.zIndex = 0;
-            document.getElementById(`big-title`).style.transform = 'translateX(-200px)';
-            document.getElementById(`big-title`).style.zIndex = -1;
+        // if(!showTransactions && index === 2){
+        //     setShowTransactions(true);
+        //     document.getElementById(`transactions`).style.transform = 'translateY(-1200px)';
+        //     document.getElementById(`transactions`).style.zIndex = 10;
+        //     document.getElementById(`button`).style.transform = 'translateY(-200px)';
+        //     document.getElementById(`button`).style.zIndex = 0;
+        //     document.getElementById(`big-title`).style.transform = 'translateX(-200px)';
+        //     document.getElementById(`big-title`).style.zIndex = -1;
 
 
-            for(let i = index + 1; i < 4; i++){
-                document.getElementById(`card-${i}`).style.transform = 'translateY(0px) rotateX(0deg) scale(0) translateZ(-100px)';
-                document.getElementById(`card-${i}`).style.zIndex = -4 ;
-            }
-            for(let i = 0 ; i < index; i++){
-                document.getElementById(`card-${i}`).style.transform = 'translateY(0px) rotateX(0deg) scale(0) translateZ(-400px)';
-                document.getElementById(`card-${i}`).style.zIndex = -4 ;   
-            } 
+        //     for(let i = index + 1; i < 4; i++){
+        //         document.getElementById(`card-${i}`).style.transform = 'translateY(0px) rotateX(0deg) scale(0) translateZ(-100px)';
+        //         document.getElementById(`card-${i}`).style.zIndex = -4 ;
+        //     }
+        //     for(let i = 0 ; i < index; i++){
+        //         document.getElementById(`card-${i}`).style.transform = 'translateY(0px) rotateX(0deg) scale(0) translateZ(-400px)';
+        //         document.getElementById(`card-${i}`).style.zIndex = -4 ;   
+        //     } 
             
-        }
+        // }
 
         if(cardSwiped[index]) {
 
@@ -68,8 +64,21 @@ const CardStack = () => {
                 document.getElementById(`rectangle-2`).style.transform = 'rotate(0deg) translateX(-50px)';
                 document.getElementById(`rectangle-1`).style.transform = 'rotate(0deg)';
                 document.getElementById(`polygon-2`).style.transform= 'translateX(100px) rotate(90deg)';
-                document.getElementById(`polygon-1`).style.transform= 'translateX(-50px) rotate(-57deg)';
-                
+                document.getElementById(`polygon-1`).style.transform= 'translateX(-50px) rotate(-57deg)';   
+            }
+            if(index === 1) {
+
+            document.getElementById(`polygon-2`).style.transform= 'translateX(230px) rotate(0deg)';
+            document.getElementById(`polygon-1`).style.transform= 'translateX(10px)';
+            document.getElementById(`triangle-2`).style.transform = 'translate(300px,220px)';
+            document.getElementById(`triangle-1`).style.transform ='translate(-200px,-10px)';
+            }
+
+            if(index === 2) {
+                document.getElementById(`circle-2`).style.transform = 'translateX(400px)';
+                document.getElementById(`circle-1`).style.transform = 'translateX(-400px)';
+                document.getElementById(`triangle-2`).style.transform ='translate(140px, 20px)';
+                document.getElementById(`triangle-1`).style.transform ='translate(0px, 20px)';
             }
 
             document.getElementById(`card-${index}`).style.transform = 'translateY(0px) rotateX(0deg)';
@@ -92,7 +101,7 @@ const CardStack = () => {
                 document.getElementById(`card-${i}`).style.transform = `translateY(300px) rotateX(45deg) translateZ(${updatedTrasformZValue}px)`;  
             }
         }else{
-            if(index !== 2) {
+            // if(index !== 2) {
             setCardSwiped((prev) => {
             return prev.map((item, i) => {
                 if(i === index){
@@ -106,12 +115,20 @@ const CardStack = () => {
         if(index === 0) {
             document.getElementById(`rectangle-2`).style.transform = 'rotate(46deg) translateX(100px)';
             document.getElementById(`rectangle-1`).style.transform = 'rotate(-33deg)';
-            
             document.getElementById(`polygon-2`).style.transform= 'translateX(230px) rotate(0deg)';
-            
             document.getElementById(`polygon-1`).style.transform= 'translateX(10px)';
-            
-
+        }
+        if(index === 1) {
+            document.getElementById(`polygon-2`).style.transform= 'translateX(100px) rotate(90deg)';
+                document.getElementById(`polygon-1`).style.transform= 'translateX(-50px) rotate(-57deg)';
+            document.getElementById(`triangle-2`).style.transform ='translate(140px, 20px)';
+            document.getElementById(`triangle-1`).style.transform ='translate(0px, 20px)';
+        }
+        if(index === 2) {
+            document.getElementById(`triangle-2`).style.transform = 'translate(300px,220px)';
+            document.getElementById(`triangle-1`).style.transform ='translate(-200px,-10px)';
+            document.getElementById(`circle-2`).style.transform = 'translateX(240px)';
+            document.getElementById(`circle-1`).style.transform = 'translateX(0px)';
         }
 
         document.getElementById(`card-${index}`).style.transform = 'translateY(300px) rotateX(45deg)';
@@ -125,7 +142,7 @@ const CardStack = () => {
             document.getElementById(`card-${i}`).style.transform = `translateY(300px) rotateX(45deg) translateZ(${updatedTrasformZValue}px)`;  
             document.getElementById(`card-${index}`).style.zIndex = index ;
         }
-    }
+    // }
 } 
 };
 
@@ -152,6 +169,10 @@ const cardNumbers=['8123 6872 4193 1337','1952 7458 9151 5734','8714 1782 4237 1
   <div className='shapes rectangle-2' id='rectangle-2' ><img src={`./images/rectangle-2.svg`} style={{transform: 'skew(10deg, 10deg)'}}/></div>
   <div className='shapes polygon-2' id='polygon-2' ><img src={`./images/polygon-2.svg`} style={{width: '200px', height:'200px'}}/></div>
   <div className='shapes polygon-1' id='polygon-1' ><img src={`./images/polygon-1.svg`} style={{width: '260px', height:'260px'}}/></div>
+  <div className='shapes triangle-2' id='triangle-2' ><img src={`./images/triangle-2.svg`} /></div>
+  <div className='shapes triangle-1' id='triangle-1' ><img src={`./images/triangle-1.svg`} /></div>
+  <div className='shapes circle-2' id='circle-2' ><img src={`./images/circle-2.svg`} style={{width: '180px', height:'180px'}} /></div>
+  <div className='shapes circle-1' id='circle-1' ><img src={`./images/circle-1.svg`} style={{width: '140px', height:'140px'}} /></div>
   </div>
   <div className="button-container">
      <div className="button" id='button' onClick={showCards}><img src={`./images/arrow-left.svg`}/></div> 

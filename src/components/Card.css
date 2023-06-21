@@ -187,4 +187,22 @@
   margin-top: 80px;
   transform: translateX(100px) rotate(90deg);
 }
+.shapes .triangle-1{
+  margin-top: -23px;
+  margin-left: -197px;
+  transform: translate(-200px,-10px);
+}
+.shapes .triangle-2{
+  margin-top: 102px;
+  transform: translate(300px,220px);
+}
 
+.shapes .circle-1{
+  margin-top: 250px;
+  margin-left: -30px;
+  transform: translateX(-200px);
+}
+.shapes .circle-2{
+  margin-top: 78px;
+  transform: translateX(400px);
+}
