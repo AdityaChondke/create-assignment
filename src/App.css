@@ -12,11 +12,23 @@
   perspective: 1000px;
   display: flex;
   justify-content: center;
+
 }
 .container {
   width: 350px;
   height: 700px;
   background-color: #FFFFFF;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  overflow: hidden;
 }
 
+.left-section, .right-section {
+  flex-grow: 1;
+  height: 700px;
+  background-color: #FFFFFF;
+  z-index: 4;
+}
 

@@ -23,6 +23,12 @@ const CardStack = () => {
     const [showUserDetails, setShowUserDetails] = useState(false);
 
     const handleClick = (index) => {
+        // document.getElementById(`rectangle`).style.transform = 'translateX(200px)';
+
+        
+
+
+
         if(index === 3){
             return;
         }
@@ -57,6 +63,15 @@ const CardStack = () => {
         }
 
         if(cardSwiped[index]) {
+
+            if(index ===0) {
+                document.getElementById(`rectangle-2`).style.transform = 'rotate(0deg) translateX(-50px)';
+                document.getElementById(`rectangle-1`).style.transform = 'rotate(0deg)';
+                document.getElementById(`polygon-2`).style.transform= 'translateX(100px) rotate(90deg)';
+                document.getElementById(`polygon-1`).style.transform= 'translateX(-50px) rotate(-57deg)';
+                
+            }
+
             document.getElementById(`card-${index}`).style.transform = 'translateY(0px) rotateX(0deg)';
             document.getElementById(`card-${index}`).style.zIndex = -index ;
             setCardSwiped((prev) => {
@@ -88,6 +103,17 @@ const CardStack = () => {
             })
         });
     
+        if(index === 0) {
+            document.getElementById(`rectangle-2`).style.transform = 'rotate(46deg) translateX(100px)';
+            document.getElementById(`rectangle-1`).style.transform = 'rotate(-33deg)';
+            
+            document.getElementById(`polygon-2`).style.transform= 'translateX(230px) rotate(0deg)';
+            
+            document.getElementById(`polygon-1`).style.transform= 'translateX(10px)';
+            
+
+        }
+
         document.getElementById(`card-${index}`).style.transform = 'translateY(300px) rotateX(45deg)';
 
         for(let i = index + 1; i < 4; i++){
@@ -121,11 +147,13 @@ const cardNumbers=['8123 6872 4193 1337','1952 7458 9151 5734','8714 1782 4237 1
 
   const cards = Array.from({ length: 4 }, (_, index) => <Card key={index} index={index} cardNumber={cardNumbers[index]}  handleClick={handleClick} />);
   return <>
- 
-  {/* <div className='rectangle-2' id='rectangle' ><img src={`./images/rectangle-2.svg`}/></div> */}
+ <div className='shapes'>
+  <div className='shapes rectangle' id='rectangle-1' ><img src={`./images/rectangle-1.svg`}  style={{transform: 'skew(10deg, 10deg)'}}/></div>
+  <div className='shapes rectangle-2' id='rectangle-2' ><img src={`./images/rectangle-2.svg`} style={{transform: 'skew(10deg, 10deg)'}}/></div>
+  <div className='shapes polygon-2' id='polygon-2' ><img src={`./images/polygon-2.svg`} style={{width: '200px', height:'200px'}}/></div>
+  <div className='shapes polygon-1' id='polygon-1' ><img src={`./images/polygon-1.svg`} style={{width: '260px', height:'260px'}}/></div>
+  </div>
   <div className="button-container">
-  {/* <div className='rectangle-1' id='rectangle' ><img src={`./images/rectangle-2.svg`}/></div> */}
-
      <div className="button" id='button' onClick={showCards}><img src={`./images/arrow-left.svg`}/></div> 
     <div className='big-title' id='big-title'> Your Cards</div>
     <div className="button-text">VR</div>
