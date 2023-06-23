@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/create-assignment/static/css/main.f6ea8801.css",
+    "main.js": "/create-assignment/static/js/main.f04b00f5.js",
+    "static/js/787.d5c647cf.chunk.js": "/create-assignment/static/js/787.d5c647cf.chunk.js",
+    "static/media/SF-Pro-Display-Medium.otf": "/create-assignment/static/media/SF-Pro-Display-Medium.e1d844da0ee028d4e288.otf",
+    "static/media/SF-Pro-Display-Bold.otf": "/create-assignment/static/media/SF-Pro-Display-Bold.170e68ac3f4c79ef407d.otf",
+    "static/media/SF-Pro-Display-Light.otf": "/create-assignment/static/media/SF-Pro-Display-Light.916b3ad9eb7cec3e03e2.otf",
+    "static/media/SF-Pro-Display-Thin.otf": "/create-assignment/static/media/SF-Pro-Display-Thin.c656fd92a4e16cd8b12c.otf",
+    "static/media/SF-Pro-Display-Regular.otf": "/create-assignment/static/media/SF-Pro-Display-Regular.d95919824936a9bf4051.otf",
+    "index.html": "/create-assignment/index.html",
+    "main.f6ea8801.css.map": "/create-assignment/static/css/main.f6ea8801.css.map",
+    "main.f04b00f5.js.map": "/create-assignment/static/js/main.f04b00f5.js.map",
+    "787.d5c647cf.chunk.js.map": "/create-assignment/static/js/787.d5c647cf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f6ea8801.css",
+    "static/js/main.f04b00f5.js"
+  ]
+}
